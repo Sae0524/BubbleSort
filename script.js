@@ -1,28 +1,37 @@
 /* Bubble Sort */
 
-let unsortedArr = [10,3,2,7,9,4,6,1,5,8];
+function getRandomInt(max) {
+  //Random array
+  return Math.floor(Math.random() *Math.floor(max));
+}
+
+let array = [];
+let max = 1000
+let length = 30
+for (let i = 1; i < length; i++) {
+  array.push(getRandomInt(max));
+}
 
 
 let swapped;
 
-function bubbleSort(arr) {
+function bubbleSort(array) {
   swapped = false;
-  let end = arr.length -1; 
+  let end = array.length -1; 
   for (let i = 0; i < end; i++) {
-    if(arr[i] > arr[i + 1]) {
+    if(array[i] > array[i + 1]) {
       swapped = true;
-      let temp = arr[i];
-      arr[i] = arr[i + 1];
-      arr[i + 1] =temp
+      let temp = array[i];
+      array[i] = array[i + 1];
+      array[i + 1] =temp
     }
   }
   end--;
 }
 
 do {
-  bubbleSort(unsortedArr);
+  bubbleSort(array);
 } while (swapped);
 
-console.log(unsortedArr);
+console.log(array);
 
-//  lines[i] = Math.floor(Math.random() * 1000) + 1;
